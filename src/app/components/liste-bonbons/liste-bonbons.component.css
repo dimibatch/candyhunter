@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Mali');
+
+#nomCategorie{
+    font-size: 2.2em;
+    font-family: 'Mali';
+    color: orange;
+    
+    font-weight: bold;
+}
+
+.title-row{
+    background-color: black;
+    border-radius: 5px;
+    margin-top: 1em;
+}
+
+.biglist{
+    background-color: black;
+}
+
+.bigrow{
+    border-top: solid orange 3px;
+}
+
+.btn-orange{
+    background-color: orange;
+    margin-top: 0.8em;
+    font-weight: bold;
+    font-family: 'Mali';
+}
+
+.candyimg{
+    height: 300px;
+    width: 400px;
+    object-fit:cover;
+    border-radius: 15px;
+}
+
+.candy-name{
+    color: orange;
+    font-size: 1.4em;
+    font-weight: bolder;
+    font-family: 'mali';
+}
