@@ -20,11 +20,11 @@
 }
 
 .bigrow{
-    border-top: solid orange 3px;
+    border-top: solid rgb(177,70,35) 3px;
 }
 
 .btn-orange{
-    background-color: orange;
+    background-color: rgb(246,146,29);
     margin-top: 0.8em;
     font-weight: bold;
     font-family: 'Mali';
@@ -33,6 +33,13 @@
 .candyimg{
     height: 300px;
     width: 400px;
+    object-fit:cover;
+    border-radius: 15px;
+}
+
+.candyimg2{
+    height: 300px;
+    width: 100%;
     object-fit:cover;
     border-radius: 15px;
 }
