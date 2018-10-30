@@ -1,0 +1,39 @@
+<div class="container-fluid candy-card bg-orange">
+  <div class="row">
+    <div class="col-auto">
+      <img class="img-thumbnail" src="{{ details.small_image }}" alt="{{ details.product_name }}">
+    </div>
+    <div class="col-6">
+      <h3>{{ details.product_name }}</h3>
+      <ul>
+        <li [ngSwitch]="true">
+          <p *ngSwitchCase="details.score < 30" class="low">{{ details.score }} / 100</p>
+          <p *ngSwitchCase="30 <= details.score && details.score <= 60" class="mid">{{ details.score }} / 100</p>
+          <p *ngSwitchCase="details.score > 60" class="high">{{ details.score }} / 100</p>
+        </li>
+        <li>
+          <p>{{ details.energy }} kcal</p>
+        </li>
+        <li>
+          <p>{{ details.sugar }} %</p>
+        </li>
+        <li>
+          <p>{{ details.fat }} %</p>
+        </li>
+        <li>
+          <p>{{ details.proteins }} %</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <button class="btn btn-white">Map</button>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <p class="card-text">
+        {{ details.ingredients }}
+      </p>
+    </div>
+  </div>
+</div>
