@@ -16,7 +16,7 @@ export class DetailsBonbonsComponent implements OnInit {
   public details = new Details();
 
   ngOnInit() {
-    return this.param_service.getDetails().subscribe(
+    return this.param_service.getDetails(this.id).subscribe(
       (data) => {
         this.details = data;
         this.details.product_name = data['product']['product_name'];
