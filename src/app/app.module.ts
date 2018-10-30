@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ListeBonbonsComponent } from './components/liste-bonbons/liste-bonbons.component';
@@ -16,7 +17,24 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
   imports: [
     BrowserModule,
     HttpClientModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    RouterModule.forRoot(
+      [
+      {
+        "path": "",
+        "component": LandingPageComponent,
+        "pathMatch": 'full'
+      },
+      {
+        "path": "liste-bonbons",
+        "component": ListeBonbonsComponent,
+        "pathMatch": 'full'
+      },
+    ],
+    {
+      'useHash': true
+    }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
