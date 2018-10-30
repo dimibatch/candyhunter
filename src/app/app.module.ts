@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { ListeBonbonsComponent } from './components/liste-bonbons/liste-bonbons.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListeBonbonsComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
