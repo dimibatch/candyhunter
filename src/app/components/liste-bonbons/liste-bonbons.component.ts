@@ -8,6 +8,9 @@ import { CandyListService} from "src/app/services/candy-list.service";
 })
 export class ListeBonbonsComponent implements OnInit {
 
+	public idStock:string;
+	public showDetail:boolean = false;
+
   public allCandies = new Array();
 	public infoCandy: Candies = new Candies();
 
@@ -188,5 +191,17 @@ this.candyService.getAllCandies(this.pageEleven).subscribe(
 				}	
 		}
 	})
+	}
+
+	public displayDetails (id) {
+		if (this.showDetail) {
+			this.showDetail = false;
+		}
+		else {
+			this.showDetail = true;
+		}
+		console.log(id)
+		this.idStock = id;
+		return id
 	}
 }

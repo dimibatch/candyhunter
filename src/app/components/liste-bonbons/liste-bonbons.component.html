@@ -1,4 +1,4 @@
-<div class="container biglist bg-black">
+<div class="container biglist bg-black" *ngIf="!showDetail">
   <div class="row justify-content-center title-row mb-4 pt-4 bg-black">
       
         <p id="nomCategorie">Nom de Categorie</p>
@@ -10,7 +10,9 @@
             *ngFor="let current of allCandies">
             <p class="candy-name">{{current.productName}}</p>
                 <img class="img-fluid candyimg" src={{current.imgUrl}}>
-        <button type="button" class="btn btn-orange btn-lg">Voir les Details</button>
+            <button type="button" class="btn btn-orange btn-lg" 
+            on-click="displayDetails(current.candyId)">Voir les Details</button>
+           
             </div>
         
     </div>
@@ -19,5 +21,7 @@
     
     
   </div>
-
   
+  <div *ngIf="showDetail">
+    <app-details-bonbons [id]="idStock"></app-details-bonbons>
+  </div>
