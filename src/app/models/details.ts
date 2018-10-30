@@ -4,7 +4,7 @@ export class Details {
     "category": string;
     "small_image": string;
     "ingredients": string;
-
+    "keywords": string[];
     "score": string;
     "energy": string;
     "sugar": string;

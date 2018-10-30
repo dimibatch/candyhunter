@@ -1,0 +1,16 @@
+.candy-card {
+  width: 500px;
+  height: auto;
+}
+
+.low {
+  color: red;
+}
+
+.mid {
+  color: yellow;
+}
+
+.high {
+  color: green;
+}
