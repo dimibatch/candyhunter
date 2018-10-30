@@ -9,7 +9,7 @@ import { Details } from '../../models/details';
 })
 export class DetailsBonbonsComponent implements OnInit {
 
-  @Input() id: string = '3596710447992';
+  @Input() id: string;
 
   constructor(private param_service: ApiDetailsService) { }
 
