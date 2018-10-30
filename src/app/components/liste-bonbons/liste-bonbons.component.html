@@ -6,41 +6,13 @@
     </div>
     
     <div class="row justify-content-center bigrow pt-4">
-            <div class="col-12 col-md-6 col-lg-4 text-center mt-4">
-            <p class="candy-name">Nom de bonbon</p>
-                <img class="img-fluid candyimg" src="https://static.cuisineaz.com/680x357/i101200-comment-sont-faits-les-bonbons-gelifies.jpg">
+            <div class="col-12 col-md-6 col-lg-4 text-center mt-4" 
+            *ngFor="let current of allCandies">
+            <p class="candy-name">{{current.productName}}</p>
+                <img class="img-fluid candyimg" src={{current.imgUrl}}>
         <button type="button" class="btn btn-orange btn-lg">Voir les Details</button>
             </div>
-        <div class="col-12 col-md-6 col-lg-4 text-center mt-4">
-            <p class="candy-name">Nom de bonbon</p>
-            <img class="img-fluid candyimg" src="https://www.anousparis.fr/app/uploads/2018/05/un-musee-bonbon-voir-jour-new-york_width1024.jpg">
-        <button type="button" class="btn btn-orange btn-lg">Voir les Details</button>
-            </div>
-        <div class="col-12 col-md-6 col-lg-4 text-center mt-4">
-            <p class="candy-name">Nom de bonbon</p>
-            <img class="img-fluid candyimg" src="https://previews.123rf.com/images/jenifoto/jenifoto1706/jenifoto170600044/80612594-fond-de-bonbons-assortis-color%C3%A9s-comprenant-des-sucettes-des-boules-de-gomme-et-des-bonbons-de-gel%C3%A9e.jpg">
-        <button type="button" class="btn btn-orange btn-lg">Voir les Details</button>
-            </div>
-        <div class="col-12 col-md-6 col-lg-4 text-center mt-4">
-            <p class="candy-name">Nom de bonbon</p>
-            <img class="img-fluid candyimg" src="https://previews.123rf.com/images/jenifoto/jenifoto1706/jenifoto170600044/80612594-fond-de-bonbons-assortis-color%C3%A9s-comprenant-des-sucettes-des-boules-de-gomme-et-des-bonbons-de-gel%C3%A9e.jpg">
-        <button type="button" class="btn btn-orange btn-lg">Voir les Details</button>
-            </div>
-        <div class="col-12 col-md-6 col-lg-4 text-center mt-4">
-            <p class="candy-name">Nom de bonbon</p>
-            <img class="img-fluid candyimg" src="https://previews.123rf.com/images/jenifoto/jenifoto1706/jenifoto170600044/80612594-fond-de-bonbons-assortis-color%C3%A9s-comprenant-des-sucettes-des-boules-de-gomme-et-des-bonbons-de-gel%C3%A9e.jpg">
-        <button type="button" class="btn btn-orange btn-lg">Voir les Details</button>
-            </div>
-        <div class="col-12 col-md-6 col-lg-4 text-center mt-4">
-            <p class="candy-name">Nom de bonbon</p>
-            <img class="img-fluid candyimg" src="https://previews.123rf.com/images/jenifoto/jenifoto1706/jenifoto170600044/80612594-fond-de-bonbons-assortis-color%C3%A9s-comprenant-des-sucettes-des-boules-de-gomme-et-des-bonbons-de-gel%C3%A9e.jpg">
-        <button type="button" class="btn btn-orange btn-lg">Voir les Details</button>
-            </div>
-        <div class="col-12 col-md-6 col-lg-4 text-center mt-4">
-            <p class="candy-name">Nom de bonbon</p>
-            <img class="img-fluid candyimg" src="https://previews.123rf.com/images/jenifoto/jenifoto1706/jenifoto170600044/80612594-fond-de-bonbons-assortis-color%C3%A9s-comprenant-des-sucettes-des-boules-de-gomme-et-des-bonbons-de-gel%C3%A9e.jpg">
-        <button type="button" class="btn btn-orange btn-lg">Voir les Details</button>
-            </div>
+        
     </div>
     
     
