@@ -17,7 +17,7 @@ export class ApiDetailsService {
     this._http = param_service;
   }
 
-  public getDetails(id): Observable<any> {
+  public getDetails(id: string): Observable<any> {
     const obs1: Observable<any> = this._http.get(API_DETAIL_URL + id + '.json');
     const treatment = (data: any): Details => {
       return data as Details;
