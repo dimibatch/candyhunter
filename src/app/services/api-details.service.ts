@@ -5,7 +5,6 @@ import { map } from 'rxjs/operators';
 import { Details } from '../models/details';
 
 const API_DETAIL_URL: string = 'https://fr.openfoodfacts.org/api/v0/product/';
-const BAR_CODE: string = '3596710447992';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +17,8 @@ export class ApiDetailsService {
     this._http = param_service;
   }
 
-  public getDetails(): Observable<any> {
-    const obs1: Observable<any> = this._http.get(API_DETAIL_URL + BAR_CODE + '.json');
+  public getDetails(id: string): Observable<any> {
+    const obs1: Observable<any> = this._http.get(API_DETAIL_URL + id + '.json');
     const treatment = (data: any): Details => {
       return data as Details;
     };
