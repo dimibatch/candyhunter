@@ -9,14 +9,14 @@ import { Details } from '../../models/details';
 })
 export class DetailsBonbonsComponent implements OnInit {
 
-  @Input() id: string = '3596710447992';
+  @Input() id: string;
 
   constructor(private param_service: ApiDetailsService) { }
 
   public details = new Details();
 
   ngOnInit() {
-    return this.param_service.getDetails().subscribe(
+    return this.param_service.getDetails(this.id).subscribe(
       (data) => {
         this.details = data;
         this.details.product_name = data['product']['product_name'];
