@@ -204,4 +204,29 @@ this.candyService.getAllCandies(this.pageEleven).subscribe(
 		this.idStock = id;
 		return id
 	}
+
+	// nomDeguisement:string;
+	// imgDeguisement:string;
+	// public deguisements :any[]= [
+	// 	{
+	// 	  nom : 'Loup-garou',
+		  
+	// 	  image : 'https://thumbs.dreamstime.com/t/hausse-bagu%C3%A9e-de-plan%C3%A8te-au-dessus-de-paysage-froid-60548851.jpg'
+	// 	},
+	// 	{
+	// 	  nom : 'Sorciere',
+		  
+	// 	  image : 'https://www.tunibox.com/images/posts//2008/12/50_espace/integration.jpg'
+	// 	},
+	// 	{
+	// 	  nom : 'Crocodile',
+	// 	  image : 'https://mobimg.b-cdn.net/pic/v2/gallery/preview/kosmos-pejzazh-planety-41300.jpg'
+	// 	}];
+	
+	// public changeDeguisement():void{
+	// 	let random=Math.floor(Math.random() * 3);
+	// 	this.nomDeguisement = this.deguisements[random].nom;
+	// 	this.imgDeguisement = this.deguisements[random].image;
+	// 	// return this.deguisements[random].nom;
+	// }
 }

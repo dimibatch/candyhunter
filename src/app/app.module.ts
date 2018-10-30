@@ -11,6 +11,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DetailsBonbonsComponent } from './components/details-bonbons/details-bonbons.component';
+import { CostumeComponent } from './components/costume/costume.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DetailsBonbonsComponent } from './components/details-bonbons/details-bo
     LandingPageComponent,
     NavbarComponent,
     FooterComponent,
-    DetailsBonbonsComponent
+    DetailsBonbonsComponent,
+    CostumeComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +42,11 @@ import { DetailsBonbonsComponent } from './components/details-bonbons/details-bo
       {
         "path": "details-bonbons",
         "component": DetailsBonbonsComponent,
+        "pathMatch": 'full'
+      },
+      {
+        "path": "suggestion-costume",
+        "component": CostumeComponent,
         "pathMatch": 'full'
       },
     ],
