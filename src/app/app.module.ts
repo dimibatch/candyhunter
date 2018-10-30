@@ -1,8 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+<<<<<<< HEAD
 import { RouterModule, Routes } from '@angular/router';
 
+=======
+import { CandyListService} from 'src/app/services/candy-list.service'
+>>>>>>> dev
 import { AppComponent } from './app.component';
 import { ListeBonbonsComponent } from './components/liste-bonbons/liste-bonbons.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -36,7 +40,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
     }
     )
   ],
-  providers: [],
+  providers: [CandyListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
