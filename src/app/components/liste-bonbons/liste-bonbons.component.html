@@ -1,0 +1,36 @@
+<div class="container biglist bg-black" *ngIf="!showDetail">
+  <div class="row justify-content-center title-row mb-4 pt-4 bg-black">
+      
+        <p id="nomCategorie">Liste des Bonbons</p>
+        
+    </div>
+    
+    <div class="row justify-content-center bigrow pt-4 bg-black">
+            <div class="col-12 col-md-6 col-lg-4 text-center mt-4" 
+            *ngFor="let current of allCandies">
+            <div class="card bg-black border-0">
+                <img class="card-img-top candyimg2" src="{{current.imgUrl}}" alt="Card image cap">
+                <div class="card-body bg-black">
+                  <h5 class="card-title candy-name">{{current.productName}}</h5>
+                  
+                  <button type="button" class="btn btn-orange btn-lg" 
+            on-click="displayDetails(current.candyId)">Voir les Details</button>
+                </div>
+              </div>
+            <!-- <p class="candy-name">{{current.productName}}</p>
+                <img class="img-fluid candyimg" src={{current.imgUrl}}>
+            <button type="button" class="btn btn-orange btn-lg" 
+            on-click="displayDetails(current.candyId)">Voir les Details</button>
+            -->
+            </div>
+        
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div *ngIf="showDetail">
+    <app-details-bonbons [id]="idStock"></app-details-bonbons>
+  </div>

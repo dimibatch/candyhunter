@@ -1,0 +1,23 @@
+h3 {
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+* {
+  font-family: 'Mali', cursive;
+}
+
+p {
+  font-size: 1.4em;
+}
+
+.low {
+  color: red;
+}
+
+.mid {
+  color: yellow;
+}
+
+.high {
+  color: green;
+}

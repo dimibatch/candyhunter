@@ -1,0 +1,28 @@
+.nom-Du-Site{
+    font-size: 250%;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+.nav-lien{
+    font-family: 'Mali', cursive;
+    color: rgb(246,146,29);
+    font-size: 120%;
+    padding-right: 15px
+}
+.nav-lien:hover{
+    font-weight: bold;
+    color: rgb(246,146,29);
+    font-size: 150%;
+    text-decoration: none
+}
+
+/* Media Queries*/
+
+@media screen and (max-width: 991px) {
+    .navbar {
+      text-align: center
+    }
+    .nom-Du-Site{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
