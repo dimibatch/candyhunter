@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
+import { Location } from '../models/location';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 const GEOLOCATION_ERRORS = {
 	'errors.location.unsupportedBrowser': 'Browser does not support location services',
@@ -12,6 +15,8 @@ const GEOLOCATION_ERRORS = {
   providedIn: 'root'
 })
 export class LocationService {
+
+	constructor(private _http: HttpClient) { }
 	
 	public getLocation(geoLocationOptions?: any): Observable<any> {
 		geoLocationOptions = geoLocationOptions || { timeout: 5000 };
@@ -41,8 +46,24 @@ export class LocationService {
 			}
 		});
 
+	}
 
+	// Recuperation des données de localisation 
+	public getPositionInfo(lon, lat): Observable<Location> {
 
+		let apiUrl = "https://api-adresse.data.gouv.fr/reverse/?lon=" + lon + "&lat=" + lat;
+		return this._http.get(apiUrl).pipe(
+			map(
+				(data: any) => {
+					let adressInfo: Location = new Location();
+					adressInfo.city = data.features[0]['properties']['city'];
+					adressInfo.street = data.features[0]['properties']['street'];
+					adressInfo.region = data.features[0]['properties']['context'];
+					adressInfo.adresse = data.features[0]['properties']['label'];
+					adressInfo.cityCode = data.features[0]['properties']['citycode'];
+
+					return adressInfo;
+				}))
 	}
 
 }
@@ -50,28 +71,3 @@ export class LocationService {
 export let geolocationServiceInjectables: Array<any> = [
 	{ provide: LocationService, useClass: LocationService }
 ];
-
-/*
-///////////////////////////////////////
-
-// Recuperation des donnée de localisation 
-	public getPositionInfo(lon, lat): Observable < Location > {
-
-	let apiUrl = "https://api-adresse.data.gouv.fr/reverse/?lon=" + lon + "&lat=" + lat;
-	return this.serviceHttp.get(apiUrl).pipe(
-		map(
-			(data: any) => {
-				let adressInfo: Location = new Location();
-				adressInfo.city = data.features[0]['properties']['city'];
-				adressInfo.street = data.features[0]['properties']['street'];
-				adressInfo.region = data.features[0]['properties']['context'];
-				adressInfo.adresse = data.features[0]['properties']['label'];
-				adressInfo.cityCode = data.features[0]['properties']['citycode'];
-
-				return adressInfo;
-			}))
-}
-
-
-*/
-//////////////////////////////////////////////////
