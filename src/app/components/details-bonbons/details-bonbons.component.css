@@ -6,6 +6,10 @@ h3 {
   font-family: 'Mali', cursive;
 }
 
+p {
+  font-size: 1.4em;
+}
+
 .low {
   color: red;
 }
