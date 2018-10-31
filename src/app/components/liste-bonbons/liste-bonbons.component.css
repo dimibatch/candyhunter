@@ -20,7 +20,7 @@
 }
 
 .bigrow{
-    border-top: solid rgb(177,70,35) 3px;
+    border-bottom: solid rgb(177,70,35) 3px;
 }
 
 .btn-orange{
@@ -54,4 +54,12 @@
 .pokedex-container{
     background-image: url(https://i.imgur.com/VC9ndnQ.jpg);
     background-size: cover;
+}
+
+.fa-check{
+    color: green;
+}
+
+.fa-times{
+    color: red;
 }

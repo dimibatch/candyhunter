@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { CandyListService} from 'src/app/services/candy-list.service'
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { DetailsBonbonsComponent } from './components/details-bonbons/details-bonbons.component';
 import { CostumeComponent } from './components/costume/costume.component';
 import { MapComponent } from './components/map/map.component';
+import { BonbonPipePipe } from './bonbon-pipe.pipe';
 import { GeoTestComponent } from './components/testing/geo-test/geo-test.component';
 
 @NgModule({
@@ -26,11 +28,13 @@ import { GeoTestComponent } from './components/testing/geo-test/geo-test.compone
     MapComponent,
     GeoTestComponent,
     CostumeComponent,
-    MapComponent
+    MapComponent,
+    BonbonPipePipe
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(
       [
