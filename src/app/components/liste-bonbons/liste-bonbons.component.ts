@@ -7,7 +7,7 @@ import { CandyListService} from "src/app/services/candy-list.service";
   styleUrls: ['./liste-bonbons.component.css']
 })
 export class ListeBonbonsComponent implements OnInit {
-
+	public bonbonTape;
 	public idStock:string;
 	public showDetail:boolean = false;
 

@@ -1,14 +1,18 @@
 <div class="container-fluid">
 <div class="container biglist bg-black" *ngIf="!showDetail">
   <div class="row justify-content-center title-row mb-4 pt-4 bg-black">
-      
         <p id="nomCategorie">Liste des Bonbons</p>
-        
     </div>
-    
-    <div class="row justify-content-center bigrow pt-4 bg-black">
+    <div class="row justify-content-center">
+    <div class="col-12 text-center bigrow mb-3 pb-3">
+        <h5 class="candy-name mb-3">Rechercher un bonbon</h5>
+        <input [(ngModel)] = "bonbonTape" value=""/>
+    </div>
+    </div>
+    <div class="row justify-content-center pt-4 bg-black">
+        
             <div class="col-12 col-md-6 col-lg-4 text-center mt-4" 
-            *ngFor="let current of allCandies">
+            *ngFor="let current of allCandies | bonbonPipe:bonbonTape">
             <div class="card bg-black border-0">
                 <img class="card-img-top candyimg2" src="{{current.imgUrl}}" alt="Card image cap">
                 <div class="card-body bg-black">
