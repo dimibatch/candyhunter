@@ -28,17 +28,20 @@ public getAllCandies(apiUrl): Observable<Candies> {
        let nameTab = new Array();
        let idTab = new Array();
        let imgTab = new Array();
+       let collectTab = new Array();
 
        for(let i = 0 ; i < 20 ; i += 1){
          nameTab.push(data.products[i]['product_name']);
 
          idTab[i]   = data.products[i]['_id'];
          imgTab[i]  =	data.products[i]['image_small_url'];
+         collectTab[i] = false ;
        }
 
        allCandies.productName = nameTab;
        allCandies.candyId = idTab;
        allCandies.imgUrl =	imgTab;
+       allCandies.collected = collectTab;
        
        return allCandies;
        
