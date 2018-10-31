@@ -1,47 +1,73 @@
 <div class="container-fluid">
-  <div class="row  p-3">
-    <div class="col-12">
-      <h3 class="text-center">{{ details.product_name }}</h3>
-    </div>    
+	<div class="row  p-3">
+    	<div class="col-12">
+      		<h3 class="text-center">{{ details.product_name }}</h3>
+    	</div>    
   </div>
   <div class="row justify-content-between  p-3">
-    <div class="col-6 align-self-center">
-      <ul class="list-group">
-        <li class="list-group-item">
-          <p>Énergie (pour 100g) {{ details.energy }} kcal</p>
-        </li>
-        <li class="list-group-item">
-          <p>Glucides (pour 100g) {{ details.sugar }}g</p>
-        </li>
-        <li class="list-group-item">
-          <p>Lipides (pour 100g) {{ details.fat }}g</p>
-        </li>
-        <li class="list-group-item">
-          <p>Protides (pour 100g) {{ details.proteins }}g</p>
-        </li>
-      </ul>
-    </div>
-    <div class="col-4" [ngSwitch]="true">
-      <img class="img-thumbnail" src="{{ details.small_image }}" alt="{{ details.product_name }}">
-      <p>Nutri-score :</p>
-      <p *ngSwitchCase="details.score < 30" class="low">{{ details.score }} / 100</p>
-      <p *ngSwitchCase="30 <= details.score && details.score <= 60" class="mid">{{ details.score }} / 100</p>
-      <p *ngSwitchCase="details.score > 60" class="high">{{ details.score }} / 100</p>
-    </div>
+
+		<div class="col-6 align-self-center">
+      		<ul class="list-group">
+        		<li class="list-group-item">
+          			<p>Énergie (pour 100g) {{ details.energy }} kcal</p>
+				</li>
+				<li class="list-group-item">
+					<p>Glucides (pour 100g) {{ details.sugar }}g</p>
+				</li>
+				<li class="list-group-item">
+					<p>Lipides (pour 100g) {{ details.fat }}g</p>
+				</li>
+				<li class="list-group-item">
+					<p>Protides (pour 100g) {{ details.proteins }}g</p>
+				</li>
+      		</ul>
+		</div>
+		
+		<div class="col-4" [ngSwitch]="true">
+			<img class="img-thumbnail" src="{{ details.small_image }}" alt="{{ details.product_name }}">
+			<p>Nutri-score :</p>
+			<p *ngSwitchCase="details.score < 30" class="low">{{ details.score }} / 100</p>
+			<p *ngSwitchCase="30 <= details.score && details.score <= 60" class="mid">{{ details.score }} / 100</p>
+			<p *ngSwitchCase="details.score > 60" class="high">{{ details.score }} / 100</p>
+		</div>	
   </div>
-  <div class="row justify-content-center py-3">
-    <div class="col-auto">
-      <h5>Vous avez déjà trouvé ce bonbon !</h5>
+
+	<div class="row justify-content-center py-3">
+		<div class="col-auto">
+			<h5>Vous avez déjà trouvé ce bonbon !</h5>
+		</div>
+		<div class="col-2">
+			<button class="btn btn-dark text-white">Lieu</button>
+		</div>
+	</div>
+
+	<div class="row p-3">
+    	<div class="col-12">
+      		<p class="card-text px-3 border">
+        		Ingrédients : {{ details.ingredients }}
+      		</p>
+    	</div>
     </div>
-    <div class="col-2">
-      <button class="btn btn-dark text-white">Lieu</button>
-    </div>
-  </div>
-  <div class="row p-3">
-    <div class="col-12">
-      <p class="card-text px-3 border">
-        Ingrédients : {{ details.ingredients }}
-      </p>
-    </div>
-  </div>
+</div>
+<!-- ########################################################## -->
+
+
+<div class="row justify-content-between  p-3">
+	<h5>Ou le trouvé ?</h5>
+	<div class="col-12 align-self-center">
+		<ul class="list-group">
+			<li class="list-group-item">
+				<p>Region : {{myLocation.region}}</p>
+			</li>
+			<li class="list-group-item">
+				<p>Departement :  {{myLocation.cityCode}}</p>
+			</li>
+			<li class="list-group-item">
+				<p>Ville :  {{myLocation.city}}</p>
+			</li>
+			<li class="list-group-item">
+				<p>Adresse : {{myLocation.adresse}}</p>
+			</li>
+		</ul>
+	</div>
 </div>

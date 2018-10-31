@@ -13,3 +13,8 @@
 .bg-orange{
     background-color: rgb(246,146,29)
 }
+
+.bg-pumpkin{
+    background-image: url('https://images7.alphacoders.com/499/499868.jpg');
+	background-repeat: no-repeat;
+}
