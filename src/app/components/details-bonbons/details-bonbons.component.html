@@ -25,10 +25,13 @@
 	<div class="row justify-content-center py-3">
 		<div class="col-8 col-md-5 align-self-center text-white">
 			<h5>Vous avez déjà trouvé ce bonbon !</h5>
+				<p>Longitude: {{ longitude }}</p>
+				<p>Latitude: {{ latitude }}</p>
 		</div>
 		<div class="col-8 col-md-5 align-self-center">
-			<button (click)='getDisplayMap(1.011712, 48.463)'
+			<button (click)='getDisplayMap()'
 				class="btn btn-dark text-white">{{etatButton}}</button>
+			<button (click)="sendLocation()">Où suis-je ?</button>
 		</div>
 	</div>
 
@@ -65,7 +68,7 @@
 			</ul>
 		</div>
 		<div class="col-12">
-			<app-map></app-map>
+			<app-map [lon]="longitude" [lat]="latitude"></app-map>
 		</div>
 	</div>
 </div>

@@ -15,6 +15,7 @@ import { DetailsBonbonsComponent } from './components/details-bonbons/details-bo
 import { CostumeComponent } from './components/costume/costume.component';
 import { MapComponent } from './components/map/map.component';
 import { BonbonPipePipe } from './bonbon-pipe.pipe';
+import { GeoTestComponent } from './components/testing/geo-test/geo-test.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,8 @@ import { BonbonPipePipe } from './bonbon-pipe.pipe';
     NavbarComponent,
     FooterComponent,
     DetailsBonbonsComponent,
+    MapComponent,
+    GeoTestComponent,
     CostumeComponent,
     MapComponent,
     BonbonPipePipe
@@ -54,6 +57,11 @@ import { BonbonPipePipe } from './bonbon-pipe.pipe';
         "path": "suggestion-costume",
         "component": CostumeComponent,
         "pathMatch": 'full'
+      },
+      {
+        "path": "geo-test",
+        "component": GeoTestComponent,
+        "pathMatch" : 'full'
       },
       {
         "path": "map",

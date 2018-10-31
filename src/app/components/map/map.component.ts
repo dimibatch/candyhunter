@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { last } from '@angular/router/src/utils/collection';
 
 // Declare ol variable globally
 declare var ol: any;
@@ -11,8 +12,11 @@ export class MapComponent implements OnInit {
 
 // On initialise la latitude et la longitude de Paris (centre de la carte)
 
-	public lat:number = 48.852969;
-	public lon:number = 2.349903;
+	@Input() lat: number;
+	@Input() lon: number;
+
+	//public lat:number = 48.852969;
+	//public lon:number = 2.349903;
 
 	map: any;
 
