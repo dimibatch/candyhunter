@@ -1,0 +1,36 @@
+.div-bouton{
+    margin-top: 5em;
+}
+
+.nomdeguiz{
+    font-size: 2.3em;
+    font-family: 'Gloria Hallelujah';
+    color: whitesmoke;
+    
+}
+
+.gros-bouton{
+    /* font-size: 2.5em; */
+    font-family: 'Mali';
+    margin-top: 2.5em;
+    border: 3px solid whitesmoke;
+    font-weight: bold;
+}
+
+.lead{
+    font-size: 1.9em;
+    font-family: 'Mali';
+    color: whitesmoke;
+}
+
+.lead-ok{
+    font-size:2.1em;
+    font-family: 'Mali';
+    color: rgb(177,70,35);
+}
+
+.deguizimg{
+    max-width: 300px;
+    object-fit: cover; 
+    padding-bottom: 100px
+}

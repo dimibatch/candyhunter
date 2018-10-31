@@ -11,6 +11,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DetailsBonbonsComponent } from './components/details-bonbons/details-bonbons.component';
+import { CostumeComponent } from './components/costume/costume.component';
 import { MapComponent } from './components/map/map.component';
 import { GeoTestComponent } from './components/testing/geo-test/geo-test.component';
 
@@ -23,7 +24,9 @@ import { GeoTestComponent } from './components/testing/geo-test/geo-test.compone
     FooterComponent,
     DetailsBonbonsComponent,
     MapComponent,
-    GeoTestComponent
+    GeoTestComponent,
+    CostumeComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -47,10 +50,15 @@ import { GeoTestComponent } from './components/testing/geo-test/geo-test.compone
         "pathMatch": 'full'
       },
       {
-        "path": "geo-test",
-        "component": GeoTestComponent,
+        "path": "suggestion-costume",
+        "component": CostumeComponent,
         "pathMatch": 'full'
       },
+      {
+        "path": "geo-test",
+        "component": GeoTestComponent,
+        "pathMatch" : 'full'
+      }
       {
         "path": "map",
         "component" : MapComponent,
