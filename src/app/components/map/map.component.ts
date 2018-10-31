@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import * as L from 'leaflet';
 import { last } from '@angular/router/src/utils/collection';
 
-// Declare ol variable globally
-declare var ol: any;
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -12,38 +11,38 @@ export class MapComponent implements OnInit {
 
 // On initialise la latitude et la longitude de Paris (centre de la carte)
 
-	@Input() lat: number;
-	@Input() lon: number;
+	@Input() city:string;
+	@Input() lati: number;
+	@Input() long: number;
 
 	//public lat:number = 48.852969;
 	//public lon:number = 2.349903;
 
-	map: any;
+	lat = 48.463;
+	lon = 1.011712;
 
-	public macarte = null;
+	public latiLOngi = [48.463, 1.011712];
 
 	constructor() { }
 
 	ngOnInit() {
-		this.map = new ol.Map({
-			target: 'map',
-			layers: [
-				new ol.layer.Tile({
-					source: new ol.source.OSM()
-			    })
-			],
-			view: new ol.View({
-				center: ol.proj.fromLonLat([2.349903, 48.852969]),
-			  	zoom: 8
-			})
+		// création de la map
+		let map = L.map('map').setView([this.lat, this.lon], 6);
 
-			
-		});
+		// création du calque images
+		L.tileLayer('http://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}', {
+		maxZoom: 20
+		}).addTo(map);
+
+		// ajout d'un markeur
+		let marker = L.marker([this.lat, this.lon]).addTo(map);
+		let paris = L.marker([ 48.852969, 2.349903]).addTo(map);
+
+		// ajout d'un popup
+		marker.bindPopup('<h5> La loupe. </h5>');
+		paris.bindPopup('<h5> Paris. </h5>');
+		
 	}
-	setCenter() {
-		let view = this.map.getView();
-		view.setCenter(ol.proj.fromLonLat([this.lon, this.lat]));
-		view.setZoom(8);
-	}
+
 
 }
