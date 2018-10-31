@@ -3,20 +3,23 @@
 }
 
 .nomdeguiz{
-    font-size: 2em;
+    font-size: 2.3em;
     font-family: 'Gloria Hallelujah';
+    color: whitesmoke;
 }
 
 .gros-bouton{
     /* font-size: 2.5em; */
     font-family: 'Mali';
     margin-top: 2.5em;
-    border: 3px solid rgb(19,9,18);
+    border: 3px solid whitesmoke;
+    font-weight: bold;
 }
 
 .lead{
     font-size: 1.9em;
     font-family: 'Mali';
+    color: whitesmoke;
 }
 
 .lead-ok{
