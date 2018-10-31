@@ -10,7 +10,11 @@ import { map } from "rxjs/operators";
   providedIn: 'root'
 })
 export class LocationService {
+<<<<<<< HEAD
 
+=======
+git 
+>>>>>>> location-service
 
 	private serviceHttp: HttpClient;
 
