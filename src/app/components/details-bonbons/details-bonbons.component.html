@@ -1,47 +1,82 @@
-<div class="container-fluid">
-  <div class="row  p-3">
-    <div class="col-12">
-      <h3 class="text-center">{{ details.product_name }}</h3>
-    </div>    
-  </div>
-  <div class="row justify-content-between  p-3">
-    <div class="col-6 align-self-center">
-      <ul class="list-group">
-        <li class="list-group-item">
-          <p>Énergie (pour 100g) {{ details.energy }} kcal</p>
-        </li>
-        <li class="list-group-item">
-          <p>Glucides (pour 100g) {{ details.sugar }}g</p>
-        </li>
-        <li class="list-group-item">
-          <p>Lipides (pour 100g) {{ details.fat }}g</p>
-        </li>
-        <li class="list-group-item">
-          <p>Protides (pour 100g) {{ details.proteins }}g</p>
-        </li>
-      </ul>
-    </div>
-    <div class="col-4" [ngSwitch]="true">
-      <img class="img-thumbnail" src="{{ details.small_image }}" alt="{{ details.product_name }}">
-      <p>Nutri-score :</p>
-      <p *ngSwitchCase="details.score < 30" class="low">{{ details.score }} / 100</p>
-      <p *ngSwitchCase="30 <= details.score && details.score <= 60" class="mid">{{ details.score }} / 100</p>
-      <p *ngSwitchCase="details.score > 60" class="high">{{ details.score }} / 100</p>
-    </div>
-  </div>
-  <div class="row justify-content-center py-3">
-    <div class="col-auto">
-      <h5>Vous avez déjà trouvé ce bonbon !</h5>
-    </div>
-    <div class="col-2">
-      <button class="btn btn-dark text-white">Lieu</button>
-    </div>
-  </div>
-  <div class="row p-3">
-    <div class="col-12">
-      <p class="card-text px-3 border">
-        Ingrédients : {{ details.ingredients }}
-      </p>
-    </div>
-  </div>
+<div class="container-fluid bg-black">
+	<div class="row p-3">
+    	<div class="col-12">
+      		<h3 class="border text-center text-white p-3">{{ details.product_name }}</h3>
+    	</div>    
+  	</div>	
+	<div class="row justify-content-around p-3">	
+		<div class="col-5 text-white">
+			<div class="p-3">
+				<p>Énergie (pour 100g) {{ details.energy }} kcal</p>
+				<p>Glucides (pour 100g) {{ details.sugar }}g</p>
+				<p>Lipides (pour 100g) {{ details.fat }}g</p>
+				<p>Protides (pour 100g) {{ details.proteins }}g</p>
+			</div>
+		</div>	
+		<div class="col-4 text-white" [ngSwitch]="true">
+			<img class="img-thumbnail mb-1" src="{{ details.small_image }}" alt="{{ details.product_name }}">
+			<p>Nutri-score :</p>
+			<p *ngSwitchCase="details.score < 30" class="low">{{ details.score }} / 100</p>
+			<p *ngSwitchCase="30 <= details.score && details.score <= 60" class="mid">{{ details.score }} / 100</p>
+			<p *ngSwitchCase="details.score > 60" class="high">{{ details.score }} / 100</p>
+		</div>	
+  	</div>
+
+	<div class="row justify-content-center py-3">
+		<div class="col-8 col-md-5 align-self-center text-white">
+			<h5>Vous avez déjà trouvé ce bonbon !</h5>
+		</div>
+		<div class="col-8 col-md-5 align-self-center">
+			<button (click)='getDisplayMap(1.011712, 48.463)'
+				class="btn btn-dark text-white">{{etatButton}}</button>
+		</div>
+	</div>
+
+	<div class="row p-3">
+    	<div class="col-12 text-white">
+      		<p class="card-text px-3 border">
+        		Ingrédients : {{ details.ingredients }}
+      		</p>
+    	</div>
+	</div>
+	
+<!-- ########################################################## -->
+<div *ngIf='displayMap' class="container">
+
+	<div class="row justify-content-between p-3">
+		<div class="col-12">
+			<h3 class="border text-center text-white p-3">Où le trouver ?</h3>
+		</div>
+
+		<div class="col-12 align-self-center">
+			<ul class="list-group">
+				<li class="list-group-item">
+					<p>Région : {{myLocation.region}}</p>
+				</li>
+				<li class="list-group-item">
+					<p>Département :  {{myLocation.cityCode}}</p>
+				</li>
+				<li class="list-group-item">
+					<p>Ville :  {{myLocation.city}}</p>
+				</li>
+				<li class="list-group-item">
+					<p>Adresse : {{myLocation.adresse}}</p>
+				</li>
+			</ul>
+		</div>
+		<div class="col-12">
+			<app-map></app-map>
+		</div>
+	</div>
+</div>
+
+<!-- ############################################################## -->
+<div *ngIf='displayMap' class="row justify-content-center py-3">
+		<div class="col-2">
+			<button (click)='getDisplayMap(1.011712, 48.463)'
+				class="btn btn-dark text-white">{{etatButton}}</button>
+		</div>
+</div>
+
+
 </div>

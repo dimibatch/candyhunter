@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DetailsBonbonsComponent } from './components/details-bonbons/details-bonbons.component';
 import { CostumeComponent } from './components/costume/costume.component';
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CostumeComponent } from './components/costume/costume.component';
     NavbarComponent,
     FooterComponent,
     DetailsBonbonsComponent,
-    CostumeComponent
+    CostumeComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +51,11 @@ import { CostumeComponent } from './components/costume/costume.component';
         "component": CostumeComponent,
         "pathMatch": 'full'
       },
+      {
+        "path": "map",
+        "component" : MapComponent,
+        "pathMatch" : 'full'
+      }
     ],
     {
       'useHash': true
