@@ -12,10 +12,10 @@ import { LocationService} from 'src/app/services/location.service';
 })
 export class DetailsBonbonsComponent implements OnInit {
 
-  	@Input() id: string;
-
 	public myLocation: Location = new Location();
 	public coordonee = new Array;
+
+  	@Input() id: string;
 	
  	constructor(
 		  private param_service: ApiDetailsService,
@@ -25,6 +25,17 @@ export class DetailsBonbonsComponent implements OnInit {
   	public details = new Details();
 
   ngOnInit() {
+
+// Recuperation des coordeonnée géographique
+
+	this.coordonee = this.locationService.getMylocation()
+	console.log(this.coordonee);
+// Recuperation de l'Adress 
+//======================================================
+	this.locationService.getPositionInfo(1.011712, 48.463).subscribe(
+		(info: any) =>{
+		this.myLocation = info;
+	})
 
 // 	Recuperation des information alimentaire de chaque bonbon
     return this.param_service.getDetails(this.id).subscribe(
@@ -45,16 +56,7 @@ export class DetailsBonbonsComponent implements OnInit {
 
       }
 	);
-// Recuperation des coordeonnée géographique
-//========================================================
-		this.coordonee = this.locationService.getMylocation()
-		console.log(this.coordonee);
-// Recuperation de l'Adress 
-//======================================================
-		this.locationService.getPositionInfo(1.011712, 48.463).subscribe(
-			(info: any) =>{
-			this.myLocation = info;
-		})
+	
   }
 
 }
