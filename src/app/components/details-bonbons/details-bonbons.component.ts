@@ -2,8 +2,7 @@ import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { ApiDetailsService } from '../../services/api-details.service';
 import { LocationService } from '../../services/location.service';
 import { Details } from '../../models/details';
-
-import {Location} from 'src/app/models/location';
+import { Location } from 'src/app/models/location';
 
 @Component({
   selector: 'app-details-bonbons',
@@ -23,12 +22,11 @@ export class DetailsBonbonsComponent implements OnInit {
   public errorMsg: string;
 
   public currentLocation: Coordinates = null;
-  public coords = {
-    lat: "",
-    lon: ""
-  }
+  public longitude: any;
+  public latitude: any;
 
   public details = new Details();
+  public location = new Location();
 	
  	constructor(
 		  private param_service: ApiDetailsService,
@@ -67,17 +65,18 @@ export class DetailsBonbonsComponent implements OnInit {
       }
     }
 
-    public sendLocation() {
+    public sendLocation() {        
         let self = this;
         const accuracy = { enableHighAccuracy: true };
         self.geoLocationService.getLocation(accuracy).subscribe(
           function (position) {
             self.currentLocation = position;
-            self.coords.lat = position.coords.latitude;
-            self.coords.lon = position.coords.longitude
+            self.latitude = position.coords.latitude;
+            self.longitude = position.coords.longitude;
             self.ref.detectChanges();
-            console.log(self.coords.lat);
-            console.log(self.coords.lon);
+            // console.log(self.coords);
+            // this.location = this.geoLocationService.getPositionInfo(self.coords[1], self.coords[0]);
+            // console.log('city: ' + this.location.city);            
           },
           function (error) {
             self.errorMsg = error;
