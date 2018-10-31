@@ -7,6 +7,8 @@ import { CandyListService} from "src/app/services/candy-list.service";
   styleUrls: ['./liste-bonbons.component.css']
 })
 export class ListeBonbonsComponent implements OnInit {
+	
+	public collectedClass:string;
 	public bonbonTape;
 	public idStock:string;
 	public showDetail:boolean = false;
@@ -41,7 +43,8 @@ export class ListeBonbonsComponent implements OnInit {
 						{
 							'productName': this.infoCandy.productName[i] ,
 							'candyId': this.infoCandy.candyId[i] ,
-							'imgUrl': this.infoCandy.imgUrl[i] 
+							'imgUrl': this.infoCandy.imgUrl[i],
+							'collected': false 
 						}	
 				}
 			})
@@ -55,7 +58,8 @@ export class ListeBonbonsComponent implements OnInit {
 						{
 							'productName': this.infoCandy.productName[i] ,
 							'candyId': this.infoCandy.candyId[i] ,
-							'imgUrl': this.infoCandy.imgUrl[i] 
+							'imgUrl': this.infoCandy.imgUrl[i],
+							'collected': false 
 						}	
 				}
 			})
@@ -69,7 +73,8 @@ export class ListeBonbonsComponent implements OnInit {
 						{
 							'productName': this.infoCandy.productName[i] ,
 							'candyId': this.infoCandy.candyId[i] ,
-							'imgUrl': this.infoCandy.imgUrl[i] 
+							'imgUrl': this.infoCandy.imgUrl[i],
+							'collected': false 
 						}	
 				}
 				console.log(this.allCandies)
@@ -84,7 +89,8 @@ export class ListeBonbonsComponent implements OnInit {
 						{
 							'productName': this.infoCandy.productName[i] ,
 							'candyId': this.infoCandy.candyId[i] ,
-							'imgUrl': this.infoCandy.imgUrl[i] 
+							'imgUrl': this.infoCandy.imgUrl[i],
+							'collected': false 
 						}	
 				}
 				console.log(this.allCandies)
@@ -99,7 +105,8 @@ export class ListeBonbonsComponent implements OnInit {
 						{
 							'productName': this.infoCandy.productName[i] ,
 							'candyId': this.infoCandy.candyId[i] ,
-							'imgUrl': this.infoCandy.imgUrl[i] 
+							'imgUrl': this.infoCandy.imgUrl[i],
+							'collected': false 
 						}	
 				}
 			})
@@ -113,7 +120,8 @@ export class ListeBonbonsComponent implements OnInit {
 						{
 							'productName': this.infoCandy.productName[i] ,
 							'candyId': this.infoCandy.candyId[i] ,
-							'imgUrl': this.infoCandy.imgUrl[i] 
+							'imgUrl': this.infoCandy.imgUrl[i],
+							'collected': false 
 						}	
 				}
 			})
@@ -127,7 +135,8 @@ this.candyService.getAllCandies(this.pageSeven).subscribe(
 				{
 					'productName': this.infoCandy.productName[i] ,
 					'candyId': this.infoCandy.candyId[i] ,
-					'imgUrl': this.infoCandy.imgUrl[i] 
+					'imgUrl': this.infoCandy.imgUrl[i],
+					'collected': false 
 				}	
 		}
 	})
@@ -145,7 +154,8 @@ this.candyService.getAllCandies(this.pageSeven).subscribe(
 						{
 							'productName': this.infoCandy.productName[i] ,
 							'candyId': this.infoCandy.candyId[i] ,
-							'imgUrl': this.infoCandy.imgUrl[i] 
+							'imgUrl': this.infoCandy.imgUrl[i],
+							'collected': false 
 						}	
 				}
 			})
@@ -159,7 +169,8 @@ this.candyService.getAllCandies(this.pageSeven).subscribe(
 						{
 							'productName': this.infoCandy.productName[i] ,
 							'candyId': this.infoCandy.candyId[i] ,
-							'imgUrl': this.infoCandy.imgUrl[i] 
+							'imgUrl': this.infoCandy.imgUrl[i],
+							'collected': false
 						}	
 				}
 			})
@@ -173,7 +184,8 @@ this.candyService.getAllCandies(this.pageSeven).subscribe(
 						{
 							'productName': this.infoCandy.productName[i] ,
 							'candyId': this.infoCandy.candyId[i] ,
-							'imgUrl': this.infoCandy.imgUrl[i] 
+							'imgUrl': this.infoCandy.imgUrl[i],
+							'collected': false 
 						}	
 				}
 			})
@@ -187,7 +199,8 @@ this.candyService.getAllCandies(this.pageEleven).subscribe(
 				{
 					'productName': this.infoCandy.productName[i] ,
 					'candyId': this.infoCandy.candyId[i] ,
-					'imgUrl': this.infoCandy.imgUrl[i] 
+					'imgUrl': this.infoCandy.imgUrl[i],
+					'collected': false 
 				}	
 		}
 	})
@@ -204,29 +217,16 @@ this.candyService.getAllCandies(this.pageEleven).subscribe(
 		this.idStock = id;
 		return id
 	}
-
-	// nomDeguisement:string;
-	// imgDeguisement:string;
-	// public deguisements :any[]= [
-	// 	{
-	// 	  nom : 'Loup-garou',
-		  
-	// 	  image : 'https://thumbs.dreamstime.com/t/hausse-bagu%C3%A9e-de-plan%C3%A8te-au-dessus-de-paysage-froid-60548851.jpg'
-	// 	},
-	// 	{
-	// 	  nom : 'Sorciere',
-		  
-	// 	  image : 'https://www.tunibox.com/images/posts//2008/12/50_espace/integration.jpg'
-	// 	},
-	// 	{
-	// 	  nom : 'Crocodile',
-	// 	  image : 'https://mobimg.b-cdn.net/pic/v2/gallery/preview/kosmos-pejzazh-planety-41300.jpg'
-	// 	}];
 	
-	// public changeDeguisement():void{
-	// 	let random=Math.floor(Math.random() * 3);
-	// 	this.nomDeguisement = this.deguisements[random].nom;
-	// 	this.imgDeguisement = this.deguisements[random].image;
-	// 	// return this.deguisements[random].nom;
-	// }
+	public updateCandyStatus(param_boolean){
+		
+		if (param_boolean) {
+			return this.collectedClass="fas fa-check";
+		}
+		else {
+			return this.collectedClass="fas fa-times";
+		}
+	}
+
+
 }
