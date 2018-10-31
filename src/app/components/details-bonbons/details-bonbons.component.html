@@ -24,14 +24,14 @@
 
 	<div class="row justify-content-center py-3">
 		<div class="col-8 col-md-5 py-2 align-self-end text-white">
-			<h5>Regardez sur la carte si quelqu'un d'autre à trouvé ce bonbon !</h5>
+			<h5>Regardez sur la carte si quelqu'un d'autre à trouvé ce CandyMon !</h5>
 			<button (click)='getDisplayMap()' class="btn bg-orange">{{etatButton}}</button>	
 		</div>
 		<div  *ngIf="!details.collected" class="col-8 col-md-5 py-2 align-self-end text-white">
-			<h5>Vous avez trouvé ce bonbon ? Ne perdez pas de temps et cliquez sur ce bouton !
+			<h5>Vous avez trouvé ce CandyMon ? Ne perdez pas de temps et cliquez sur ce bouton !
 					
 			</h5>
-			<button (click)="getDisplayMap()" class="btn bg-orange">J'ai trouvé ce bonbon !</button>								
+			<button (click)="getDisplayMap()" class="btn bg-orange">J'ai capturé ce CandyMon !</button>								
 		</div>
 		
 	</div>
