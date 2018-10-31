@@ -5,16 +5,10 @@ import { HttpClient} from "@angular/common/http";
 import { Location } from "src/app/models/location";
 
 import { map } from "rxjs/operators";
-
 @Injectable({
   providedIn: 'root'
 })
 export class LocationService {
-<<<<<<< HEAD
-
-=======
-git 
->>>>>>> location-service
 
 	private serviceHttp: HttpClient;
 
