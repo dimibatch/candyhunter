@@ -58,7 +58,7 @@ import { GeoTestComponent } from './components/testing/geo-test/geo-test.compone
         "path": "geo-test",
         "component": GeoTestComponent,
         "pathMatch" : 'full'
-      }
+      },
       {
         "path": "map",
         "component" : MapComponent,
