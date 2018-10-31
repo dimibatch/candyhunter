@@ -32,8 +32,8 @@ export class DetailsBonbonsComponent implements OnInit {
 		  private param_service: ApiDetailsService,
       private ref: ChangeDetectorRef, 
       private geoLocationService: LocationService 
-		  ) { }
-	
+		  ) { }    
+  
   ngOnInit() {
     return this.param_service.getDetails(this.id).subscribe(
       (data) => {
