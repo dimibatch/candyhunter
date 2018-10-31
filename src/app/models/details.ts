@@ -10,4 +10,5 @@ export class Details {
     "sugar": string;
     "fat": string;
     "proteins": string;
+    "collected": boolean;
 }

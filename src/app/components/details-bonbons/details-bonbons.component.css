@@ -21,3 +21,11 @@ p {
 .high {
   color: green;
 }
+
+.fa-check{
+  color: green;
+}
+
+.fa-times{
+  color: red;
+}

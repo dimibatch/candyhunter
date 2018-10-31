@@ -16,8 +16,9 @@
             <div class="card bg-black border-0">
                 <img class="card-img-top candyimg2" src="{{current.imgUrl}}" alt="Card image cap">
                 <div class="card-body bg-black">
-                  <h5 class="card-title candy-name">{{current.productName}}<i class="fas fa-times bg-black ml-2"></i>
-                    <i class="fas fa-check bg-black ml-2"></i></h5>
+                  <h5 class="card-title candy-name">{{current.productName}}
+                    <i *ngIf="!current.collected" class="fas fa-times bg-black ml-2"></i>
+                    <i *ngIf="current.collected" class="fas fa-check bg-black ml-2"></i></h5>
                   
                   <button type="button" class="btn btn-orange btn-lg" 
             on-click="displayDetails(current.candyId)">Voir les Details</button>

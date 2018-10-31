@@ -27,10 +27,13 @@
 			<h5>Regardez sur la carte si quelqu'un d'autre à trouvé ce bonbon !</h5>
 			<button (click)='getDisplayMap()' class="btn bg-orange">{{etatButton}}</button>	
 		</div>
-		<div class="col-8 col-md-5 py-2 align-self-end text-white">
-			<h5>Vous avez trouvé ce bonbon ? Ne perdez pas de temps et cliquez sur ce bouton !</h5>
+		<div  *ngIf="!details.collected" class="col-8 col-md-5 py-2 align-self-end text-white">
+			<h5>Vous avez trouvé ce bonbon ? Ne perdez pas de temps et cliquez sur ce bouton !
+					
+			</h5>
 			<button (click)="getDisplayMap()" class="btn bg-orange">J'ai trouvé ce bonbon !</button>								
 		</div>
+		
 	</div>
 
 	<div class="row p-3">

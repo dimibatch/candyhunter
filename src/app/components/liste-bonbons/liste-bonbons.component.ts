@@ -37,14 +37,22 @@ export class ListeBonbonsComponent implements OnInit {
 		this.candyService.getAllCandies(this.apiUrl).subscribe(
 			(dataCandy: any) => { 
 				this.infoCandy = dataCandy;
-
+				let bool: boolean = false;
 				for(let i = 0; i < 20 ; i += 1 ){
+
+					if(i == 3 || i == 5){
+						bool = true;
+					}else{
+						bool = false;
+					}
+
 					this.allCandies[i] = 
 						{
 							'productName': this.infoCandy.productName[i] ,
 							'candyId': this.infoCandy.candyId[i] ,
 							'imgUrl': this.infoCandy.imgUrl[i],
-							'collected': false 
+
+							'collected': bool 
 						}	
 				}
 			})
@@ -195,7 +203,7 @@ this.candyService.getAllCandies(this.pageEleven).subscribe(
 		this.infoCandy = dataCandy;
 
 		for(let i = 0; i < 20 ; i += 1 ){
-			this.allCandies[i + 180] = 
+			this.allCandies[i + 200] = 
 				{
 					'productName': this.infoCandy.productName[i] ,
 					'candyId': this.infoCandy.candyId[i] ,

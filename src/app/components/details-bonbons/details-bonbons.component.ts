@@ -50,6 +50,13 @@ export class DetailsBonbonsComponent implements OnInit {
         this.details.score = data['product']['nutriments']['nutrition-score-fr_100g'];
         // Mots-clés
         this.details.keywords = data['product']['_keywords'];
+// =================================================================================
+        if(this.details.code == '3103220043158' || this.details.code == '4601798030055'){
+          this.details.collected = true;
+        }else{
+          this.details.collected = false;
+        }
+// =================================================================================    
 
     });
   }
