@@ -15,7 +15,10 @@ export class DetailsBonbonsComponent implements OnInit {
 	public myLocation: Location = new Location();
 	public coordonee = new Array;
 
-  	@Input() id: string;
+    @Input() id: string;
+    
+  public displayMap: boolean = false;
+  public etatButton: string = 'Afficher sur la carte';
 	
  	constructor(
 		  private param_service: ApiDetailsService,
@@ -57,6 +60,18 @@ export class DetailsBonbonsComponent implements OnInit {
       }
 	);
 	
+  }
+
+  // ================================= Affichage de la map
+  getDisplayMap(lon,lat){
+    if(this.displayMap){
+      this.displayMap = false;
+      this.etatButton = 'Afficher sur la carte';
+
+    }else{
+      this.displayMap = true;
+      this.etatButton = 'Fermer la carte';
+    }
   }
 
 }

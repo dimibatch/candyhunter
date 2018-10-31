@@ -37,7 +37,8 @@
 			<h5>Vous avez déjà trouvé ce bonbon !</h5>
 		</div>
 		<div class="col-2">
-			<button class="btn btn-dark text-white">Lieu</button>
+			<button (click)='getDisplayMap(1.011712, 48.463)'
+				class="btn btn-dark text-white">{{etatButton}}</button>
 		</div>
 	</div>
 
@@ -50,24 +51,37 @@
     </div>
 </div>
 <!-- ########################################################## -->
+<div *ngIf='displayMap' class="container">
 
+	<div class="row justify-content-between  p-3">
+		<h5>Ou le trouvé ?</h5>
 
-<div class="row justify-content-between  p-3">
-	<h5>Ou le trouvé ?</h5>
-	<div class="col-12 align-self-center">
-		<ul class="list-group">
-			<li class="list-group-item">
-				<p>Region : {{myLocation.region}}</p>
-			</li>
-			<li class="list-group-item">
-				<p>Departement :  {{myLocation.cityCode}}</p>
-			</li>
-			<li class="list-group-item">
-				<p>Ville :  {{myLocation.city}}</p>
-			</li>
-			<li class="list-group-item">
-				<p>Adresse : {{myLocation.adresse}}</p>
-			</li>
-		</ul>
+		<div class="col-12 align-self-center">
+			<ul class="list-group">
+				<li class="list-group-item">
+					<p>Region : {{myLocation.region}}</p>
+				</li>
+				<li class="list-group-item">
+					<p>Departement :  {{myLocation.cityCode}}</p>
+				</li>
+				<li class="list-group-item">
+					<p>Ville :  {{myLocation.city}}</p>
+				</li>
+				<li class="list-group-item">
+					<p>Adresse : {{myLocation.adresse}}</p>
+				</li>
+			</ul>
+		</div>
+		<div class="col-12">
+			<app-map></app-map>
+		</div>
 	</div>
+</div>
+
+<!-- ############################################################## -->
+<div *ngIf='displayMap' class="row justify-content-center py-3">
+		<div class="col-2">
+			<button (click)='getDisplayMap(1.011712, 48.463)'
+				class="btn btn-dark text-white">{{etatButton}}</button>
+		</div>
 </div>

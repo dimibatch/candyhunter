@@ -44,6 +44,11 @@ import { MapComponent } from './components/map/map.component';
         "component": DetailsBonbonsComponent,
         "pathMatch": 'full'
       },
+      {
+        "path": "map",
+        "component" : MapComponent,
+        "pathMatch" : 'full'
+      }
     ],
     {
       'useHash': true
