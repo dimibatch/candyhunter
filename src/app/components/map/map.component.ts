@@ -12,14 +12,13 @@ export class MapComponent implements OnInit {
 // On initialise la latitude et la longitude de Paris (centre de la carte)
 
 	@Input() city:string;
-	@Input() lati: number;
-	@Input() long: number;
+	@Input() lat: number;
+	@Input() lon: number;
 
 	//public lat:number = 48.852969;
 	//public lon:number = 2.349903;
 
-	lat = 48.463;
-	lon = 1.011712;
+	
 
 	public latiLOngi = [48.463, 1.011712];
 
@@ -28,7 +27,7 @@ export class MapComponent implements OnInit {
 	ngOnInit() {
 		// création de la map
 		let map = L.map('map').setView([this.lat, this.lon], 6);
-
+			console.log(this.lat, this.lon);
 		// création du calque images
 		L.tileLayer('http://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}', {
 		maxZoom: 20

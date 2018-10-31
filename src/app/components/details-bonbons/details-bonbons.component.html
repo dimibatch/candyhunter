@@ -29,7 +29,7 @@
 		</div>
 		<div class="col-8 col-md-5 py-2 align-self-end text-white">
 			<h5>Vous avez trouvé ce bonbon ? Ne perdez pas de temps et cliquez sur ce bouton !</h5>
-			<button (click)="sendLocation()" class="btn bg-orange">J'ai trouvé ce bonbon !</button>								
+			<button (click)="getDisplayMap()" class="btn bg-orange">J'ai trouvé ce bonbon !</button>								
 		</div>
 	</div>
 
@@ -47,25 +47,7 @@
 	<div class="row justify-content-between p-3">
 		<div class="col-12">
 			<h3 class="border text-center text-white p-3">Où le trouver ?</h3>
-		</div>
-
-		<div class="col-12 align-self-center">
-			<ul class="list-group">
-				<li class="list-group-item">
-					<p>Région : {{myLocation.region}}</p>
-				</li>
-				<li class="list-group-item">
-					<p>Département :  {{myLocation.cityCode}}</p>
-				</li>
-				<li class="list-group-item">
-					<p>Ville :  {{myLocation.city}}</p>
-				</li>
-				<li class="list-group-item">
-					<p>Adresse : {{myLocation.adresse}}</p>
-				</li>
-			</ul>
-		</div>
-		<div class="col-12">
+	
 			<app-map [lon]="longitude" [lat]="latitude"></app-map>
 		</div>
 	</div>

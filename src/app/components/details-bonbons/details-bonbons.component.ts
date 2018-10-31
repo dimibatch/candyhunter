@@ -55,6 +55,7 @@ export class DetailsBonbonsComponent implements OnInit {
   }
 
     public getDisplayMap() {
+      this.sendLocation()
       if (this.displayMap) {
         this.displayMap = false;
         this.etatButton = 'Afficher sur la carte';
@@ -75,7 +76,8 @@ export class DetailsBonbonsComponent implements OnInit {
             self.longitude = position.coords.longitude;
             self.ref.detectChanges();
             // console.log(self.coords);
-            // this.location = this.geoLocationService.getPositionInfo(self.coords[1], self.coords[0]);
+
+            this.location = this.geoLocationService.getPositionInfo(self.latitude, self.longitude);
             // console.log('city: ' + this.location.city);            
           },
           function (error) {
