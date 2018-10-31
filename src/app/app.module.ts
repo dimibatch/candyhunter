@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DetailsBonbonsComponent } from './components/details-bonbons/details-bonbons.component';
 import { MapComponent } from './components/map/map.component';
+import { GeoTestComponent } from './components/testing/geo-test/geo-test.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MapComponent } from './components/map/map.component';
     NavbarComponent,
     FooterComponent,
     DetailsBonbonsComponent,
-    MapComponent
+    MapComponent,
+    GeoTestComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,11 @@ import { MapComponent } from './components/map/map.component';
       {
         "path": "details-bonbons",
         "component": DetailsBonbonsComponent,
+        "pathMatch": 'full'
+      },
+      {
+        "path": "geo-test",
+        "component": GeoTestComponent,
         "pathMatch": 'full'
       },
       {

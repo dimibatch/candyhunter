@@ -1,9 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { ApiDetailsService } from '../../services/api-details.service';
+import { LocationService } from '../../services/location.service';
 import { Details } from '../../models/details';
 
 import {Location} from 'src/app/models/location';
-import { LocationService} from 'src/app/services/location.service';
 
 @Component({
   selector: 'app-details-bonbons',
@@ -15,32 +15,28 @@ export class DetailsBonbonsComponent implements OnInit {
 	public myLocation: Location = new Location();
 	public coordonee = new Array;
 
-    @Input() id: string;
+  @Input() id: string;
     
   public displayMap: boolean = false;
   public etatButton: string = 'Afficher sur la carte';
+
+  public errorMsg: string;
+
+  public currentLocation: Coordinates = null;
+  public coords = {
+    lat: "",
+    lon: ""
+  }
+
+  public details = new Details();
 	
  	constructor(
 		  private param_service: ApiDetailsService,
-		  private locationService: LocationService
+      private ref: ChangeDetectorRef, 
+      private geoLocationService: LocationService 
 		  ) { }
-
-  	public details = new Details();
-
+	
   ngOnInit() {
-
-// Recuperation des coordeonnée géographique
-
-	this.coordonee = this.locationService.getMylocation()
-	console.log(this.coordonee);
-// Recuperation de l'Adress 
-//======================================================
-	this.locationService.getPositionInfo(1.011712, 48.463).subscribe(
-		(info: any) =>{
-		this.myLocation = info;
-	})
-
-// 	Recuperation des information alimentaire de chaque bonbon
     return this.param_service.getDetails(this.id).subscribe(
       (data) => {
         this.details = data;
@@ -57,21 +53,37 @@ export class DetailsBonbonsComponent implements OnInit {
         // Mots-clés
         this.details.keywords = data['product']['_keywords'];
 
+    });
+  }
+
+    public getDisplayMap() {
+      if (this.displayMap) {
+        this.displayMap = false;
+        this.etatButton = 'Afficher sur la carte';
+
+      } else {
+        this.displayMap = true;
+        this.etatButton = 'Fermer la carte';
       }
-	);
-	
-  }
-
-  // ================================= Affichage de la map
-  getDisplayMap(lon,lat){
-    if(this.displayMap){
-      this.displayMap = false;
-      this.etatButton = 'Afficher sur la carte';
-
-    }else{
-      this.displayMap = true;
-      this.etatButton = 'Fermer la carte';
     }
-  }
+
+    public sendLocation() {
+        let self = this;
+        const accuracy = { enableHighAccuracy: true };
+        self.geoLocationService.getLocation(accuracy).subscribe(
+          function (position) {
+            self.currentLocation = position;
+            self.coords.lat = position.coords.latitude;
+            self.coords.lon = position.coords.longitude
+            self.ref.detectChanges();
+            console.log(self.coords.lat);
+            console.log(self.coords.lon);
+          },
+          function (error) {
+            self.errorMsg = error;
+            self.ref.detectChanges();
+          }
+        )
+      }
 
 }
