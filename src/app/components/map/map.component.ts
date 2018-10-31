@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as L from 'leaflet';
+import { last } from '@angular/router/src/utils/collection';
 
 @Component({
   selector: 'app-map',
@@ -11,9 +12,14 @@ export class MapComponent implements OnInit {
 // On initialise la latitude et la longitude de Paris (centre de la carte)
 
 	@Input() city:string;
+	@Input() lati: number;
+	@Input() long: number;
 
-	public lat:number = 48.463;
-	public lon:number = 1.011712;
+	//public lat:number = 48.852969;
+	//public lon:number = 2.349903;
+
+	lat = 48.463;
+	lon = 1.011712;
 
 	public latiLOngi = [48.463, 1.011712];
 

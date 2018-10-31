@@ -53,6 +53,8 @@
     width: 100%;
 }
 .text-bouton-manger{
-    font-size: 2.5em;
-    margin-bottom: 0
+    font-size: 2em;
+    margin-bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
 }
